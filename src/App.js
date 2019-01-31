@@ -4,6 +4,7 @@ import './App.scss';
 
 import Navbar from './components/Navbar/Navbar';
 import Signup from './components/Signup/Signup';
+import Authors from './components/Authors/Authors';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <Navbar />
         <div className="container">
           <Signup />
+          <Authors/>
         </div>
       </div>
     );
