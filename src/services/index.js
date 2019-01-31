@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const API_URL = "";
+const API_URL = "http://localhost:3000";
 
-const createUser = (data) => axios.post(`${API_URL}/users/signup`, data);
+const createAuthor = (data) => axios.post(`${API_URL}/authors`, data);
 
 export {
-  createUser
+  createAuthor
 }

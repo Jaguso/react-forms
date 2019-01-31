@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { createAuthor } from '../../services';
 
 class Authors extends Component {
   constructor(){
@@ -17,9 +18,17 @@ class Authors extends Component {
     this.setState({[name]: value});
   }
 
-  onSubmit = (event) => {
+  onSubmit = async (event) => {
     event.preventDefault();
+
+    let response = {}
+    response = await createAuthor(this.state).catch(({response}) => 
+      alert(response.data.error.errors[0].message))
+    if(response) {
+      console.log(response)
+    }
   }
+  
 
   render() {
     return (
@@ -54,7 +63,7 @@ class Authors extends Component {
           </form>
         </div>
       </div>
-    )
+    );
   }
 }
 
